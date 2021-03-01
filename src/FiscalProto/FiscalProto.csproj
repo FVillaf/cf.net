@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{769F247F-A107-43DD-9CFF-E8FCC9C19E7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FiscalProto</RootNamespace>
+    <AssemblyName>FiscalProto</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bintools\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Batch.cs" />
+    <Compile Include="BatchArgs.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBDelete.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBEnumEnd.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBEnumNext.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBEnumStart.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBGet.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBInfo.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBNewRecord.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBTabla.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_DBUpdate.cs" />
+    <Compile Include="CMD\Bases_de_Datos\CMD_TeleKeyb.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ActivaImpresionArqueo.cs" />
+    <Compile Include="CMD\Configuracion\CMD_CambiarConfigAFIP.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ConfigCola.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ConfigEncabezado.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ConfigFechaHora.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ConfigInfoEstab.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ConfigRedEstablece.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ConfigRedLee.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ConfigRespIVA.cs" />
+    <Compile Include="CMD\Configuracion\CMD_DisplayConfig.cs" />
+    <Compile Include="CMD\Configuracion\CMD_LogoCancelarCarga.cs" />
+    <Compile Include="CMD\Configuracion\CMD_LogoContenido.cs" />
+    <Compile Include="CMD\Configuracion\CMD_LogoEliminar.cs" />
+    <Compile Include="CMD\Configuracion\CMD_LogoFinalizarCarga.cs" />
+    <Compile Include="CMD\Configuracion\CMD_LogoIniciarCarga.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerCola.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerConfigAFIP.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerConfigClaves.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerDatosFiscalizacion.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerEncabezado.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerFechaHora.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerImpresionArqueo.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ObtenerInfoEstab.cs" />
+    <Compile Include="CMD\Configuracion\CMD_ResetFabrica.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_Borra.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_Cancela.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_Enumera.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_Final.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_Info.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_IvaVentas.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_MemoriaFiscal.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_RangoFechas.cs" />
+    <Compile Include="CMD\Descarga\CMD_DNL_RangoZetas.cs" />
+    <Compile Include="CMD\Diagnostico\CMD_DiagEquipo.cs" />
+    <Compile Include="CMD\Diagnostico\CMD_ObtenerInfoCertif.cs" />
+    <Compile Include="CMD\Diagnostico\CMD_ObtenerInfoEquipo.cs" />
+    <Compile Include="CMD\Diagnostico\CMD_ObtenerInfoMF.cs" />
+    <Compile Include="CMD\Diagnostico\CMD_RippleTest.cs" />
+    <Compile Include="CMD\Diagnostico\CMD_TicketTecnico.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1Abrir.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1CambiaPreferencias.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1Cerrar.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1Completo.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1Info.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1Lineas.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1ObtienePreferencias.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_DNFH1Texto.cs" />
+    <Compile Include="CMD\DNFH_Genericos\CMD_MensajeSistema.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DFNHCerrar.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHAbrir.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHAnula.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHDescuento.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHGetConfig.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHGetOtrosTrib.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHItem.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHOtroTributo.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHPago.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHSetConfig.cs" />
+    <Compile Include="CMD\DNFH_Homologados\CMD_DNFHSubtotal.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFCambio.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFCobroServ.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFCtaCte.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFEstacion.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFFarmacia.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFReparto.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFRetiDota.cs" />
+    <Compile Include="CMD\DNF_Autorizados\CMD_DNFTarjeta.cs" />
+    <Compile Include="CMD\Impresora\CMD_AbrirGaveta.cs" />
+    <Compile Include="CMD\Impresora\CMD_AvanzarPapel.cs" />
+    <Compile Include="CMD\Impresora\CMD_ConfigCuchilla.cs" />
+    <Compile Include="CMD\Impresora\CMD_ConfigurarDensidadImpresion.cs" />
+    <Compile Include="CMD\Impresora\CMD_ConfigurarFuente.cs" />
+    <Compile Include="CMD\Impresora\CMD_CortarPapel.cs" />
+    <Compile Include="CMD\Impresora\CMD_ObtenerConfigCuchilla.cs" />
+    <Compile Include="CMD\Impresora\CMD_ObtenerDensidadImpresion.cs" />
+    <Compile Include="CMD\Impresora\CMD_ObtenerFuente.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_BajaFiscal.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_ConfirmaAltaFiscal.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_FinalizaSerializacion.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_IniciaAltaFiscal.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_IniciaSerializacion.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_ObtenerCSR.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_ObtenerSerializacion.cs" />
+    <Compile Include="CMD\Inicializacion\CMD_SerializaCertificados.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORAudCancela.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORAudEnumera.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORAudFinal.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORAudRangoFecha.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORAudRangoZetas.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORDupliCancela.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORDupliEnumera.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORDupliFinal.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORDupliInicia.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORGetInfoContadoresJornada.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORGetInfoImpuestosJornada.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORGetInfoOtrosTributosJornada.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORGetInfoVentasJornada.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORTotalVentas.cs" />
+    <Compile Include="CMD\Jornada_Fiscal\CMD_JORZeta.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCAbrir.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCAnula.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCCerrar.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCDescuento.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetConfig.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetImpInt.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetInfo.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetIVA.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetOtrosTrib.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetPago.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetUltimoCierre.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCGetVentas.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCItem.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCOtroTributo.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCPago.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCSetConfig.cs" />
+    <Compile Include="CMD\Nota_de_Credito\CMD_NCSubtotal.cs" />
+    <Compile Include="CMD\Sistema\CMD_ConfigurarVelocidad.cs" />
+    <Compile Include="CMD\Sistema\CMD_ObtenerErrorInicio.cs" />
+    <Compile Include="CMD\Sistema\CMD_ObtenerErrorInterno.cs" />
+    <Compile Include="CMD\Sistema\CMD_ObtenerEstado.cs" />
+    <Compile Include="CMD\Sistema\CMD_ObtenerID.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKAbrir.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKAnula.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKCerrar.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKDescuento.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetConfig.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetImpInt.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetInfo.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetIVA.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetOtrosTrib.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetPago.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetUltimoCierre.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKGetVentas.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKItem.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKOtroTributo.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKPago.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKSetConfig.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKSubtotal.cs" />
+    <Compile Include="CMD\Ticket\CMD_TKUnitario.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFAbrir.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFAnula.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFCerrar.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFDescuento.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetConfig.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetImpInt.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetInfo.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetIVA.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetOtrosTrib.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetPago.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetUltimoCierre.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFGetVentas.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFItem.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFOtroTributo.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFPago.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFSetConfig.cs" />
+    <Compile Include="CMD\Ticket_Factura\CMD_TFSubtotal.cs" />
+    <Compile Include="CMD_CommandBase.cs" />
+    <Compile Include="EncuadreBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ErrorCodes.cs" />
+    <Compile Include="FWInterface.cs" />
+    <Compile Include="MInput.cs" />
+    <Compile Include="MOutput.cs" />
+    <Compile Include="Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progress.Designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProtoHandler.cs" />
+    <Compile Include="SHelper.cs" />
+    <Compile Include="TargetBag.cs" />
+    <Compile Include="MVersion.cs" />
+    <Compile Include="VirtualPort.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ark2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_moretti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invisible22.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+﻿INTI- Ticket con Imp.Int Porcentual y Descto x Item;Ticket con Imp.Int Porcentual y Descto x Item;s;s
+0B01|0000|Nombre comprador 1||Direccion 1|||T|20168993278|I|083-00001-0000015|||
+0B02|0000|||||Item imp.int. porc.|100000|100000|2100||83330000|||1234|1|7
+0B02|0006|||||Descuento en $ sobre un item|10000|100000|2100|||||1234|1|7
+0B06|0107||||||

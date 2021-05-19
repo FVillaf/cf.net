@@ -1,0 +1,18 @@
+HOMO- T_RICF (083);Ticket simple para Homologar;s;s
+0A01|0180
+0A02|0000|||||Item basico|10000|100000|2100|||||1234|1|7
+0A02|0000|||||Item con cantidad|100000|100000|2100|||||1234|1|7
+0A02|0000|||||Item a anular|100000|100000|2100|||||1234|1|7
+0A02|0001|||||Item a anular|100000|100000|2100|||||1234|1|7
+0A02|0000|||||Item IVA no general|100000|100000|1050|||||1234|1|7
+0A02|0000|||||Item IVA exento|100000|100000|0|||||1234|1|2
+0A02|0000|||||Item no gravado|100000|100000|0|||||1234|1|1
+0A02|0000|||||Item imp.int. fijo|100000|100000|2100|20000||||1234|1|7
+0A02|0000|Linea de descripcion 4|Linea de descripcion 3|Linea de descripcion 2|Linea de descripcion 1|Item completo|95555|95545|1050|30000||||1234|1|7
+0A02|0004|||||Oferta sobre un item|10000|100000|2100|||||1234|1|7
+0A02|0000|||||Item con cantidad|100000|100000|2100|||||1234|1|7
+0A02|0006|||||Descuento en $ sobre un item|10000|100000|2100|||||1234|1|7
+0A02|0008|||||Recargo en $ sobre un item|10000|100000|2100|||||1234|1|7
+0A04|0000|Oferta del dia|10000||101||Linea 2 de la oferta|Linea 3 de la oferta
+0A04|0001|Recargo Tarjeta de Credito|5000||101||Linea 2 del recargo|Linea 3 del recargo
+0A06|0107|3|Linea reemplazada 0123456789 0123456789 01234567|||||2

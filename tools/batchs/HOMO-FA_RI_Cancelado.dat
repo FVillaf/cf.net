@@ -1,0 +1,7 @@
+HOMO- FA_RI (081) Cancelado;Ticket Factura A Cancelado;s;s
+0B01|0000|Seven Group S.A.||Neochea 415|Monterrico - Jujuy||T|30578411174|I|083-00001-0000015|||
+0B02|0040|Item completo 1|Item completo L2|Item completo L3|Item completo L4|Item completo L5|100000|100000|2100|||||1235|7|7
+0B02|0040|||||Item Basico Nro 1|10000|3525000|2100|||||1234|1|7
+0B02|4040|||||Item Basico Nro 2|10000|3525000|2100|||||1234|1|7
+0B02|0040|||||Item con Cantidad|70000|81400|2100|||||1235|7|7
+0B07|0000

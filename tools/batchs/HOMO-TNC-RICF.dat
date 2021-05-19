@@ -1,0 +1,11 @@
+HOMO- TNC-RICF (110);Ticket Nota de Credito a Consumidor Final;n;s
+0A01|4380
+0A02|0040|Extra reng 1|Extra reng 2|Extra reng 3|Extra reng 4|Renglon 1|120000|100000|2100|||||1245|7|7
+0A02|0040|||||Renglon 1|10000|230000|2100|0||||1313|5|7
+0A02|0041|||||Renglon 1|10000|230000|2100|0||||1313|5|7
+0A02|0040|||||Renglon 2|30000|1000000|2100||02000000|||1313|5|7
+0A02|0040|||||Renglon 2|10000|5000000|1050|110000||||1313|5|7
+0A04|0000|Oferta del dia|5000||101||Linea 2 de la oferta|Linea 3 de la oferta
+0A20|01C0|Prueba 2|8000|2100
+0A05|0000|Extra 1|Extra 2|6|Detalle|1051|20|100000
+0A06|0107|3|Linea reemplazada|||||2

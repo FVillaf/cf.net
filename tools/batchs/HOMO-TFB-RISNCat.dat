@@ -1,0 +1,13 @@
+HOMO- TFB-RISNCat (082);Ticket Factura B para Homologacion;s;s
+0B01|0000|Andres Moretti||Peron 1250-CABA|||T|30615773383|U|083-00001-0000015|||
+0B02|0040|Item completo L1|Item completo L2|Item completo L3|Item completo L4|Item completo L5|100000|133250|2100|||||1235|7|7
+0B02|0040|||||Item Basico|10000|575000|2100|||||1234|1|7
+0B02|0040|||||Item con Cantidad|30000|22400|2100|||||1235|7|7
+0B02|0040|||||Item a anular|10000|880000|2100|||||1234|7|7
+0B02|0041|||||Item a anular|10000|880000|2100|||||1234|7|7
+0B02|0000|||||II x Monto-21%-Neto|10000|500000|2100|100000||||1234|1|7
+0B02|0000|||||II x Porc-21%-Neto|10000|500000|2100||15000000|||1234|1|7
+0B02|4000|||||II x Porc-21%-Bruto|10000|500000|2100||15000000|||1234|1|7
+0B20|0100|P.I. NO CATEG|7384|21
+0B05|0000|Extra 1|Extra 2|6|Detalle|1051|20|100000
+0B06|0107||||||

@@ -1,0 +1,4 @@
+FALLO-Cantidad fuera de rango;pRUEBA tfa;s;s
+0B01|0000|Nombre comprador 1||Direccion 1|||T|20168993278|I|083-00001-0000015|||
+0B02|4000|||||Item basico|999999999|100000|2100|||||1234|1|7
+0B02|4000|||||Este renglon debe fallar|1000000000|100000|2100|||||1234|1|7

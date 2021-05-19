@@ -1,0 +1,19 @@
+HOMO- TFB-RIM (082);Ticket Factura B para Homologacion;s;s
+0B01|0000|Nombre comprador 1||Direccion 1|||T|20168993278|M|083-00001-0000015|||
+0B02|0000|||||Item basico|10000|100000|2100|||||1234|1|7
+0B02|0000|||||Item con cantidad|100000|100000|2100|||||1234|1|7
+0B02|0000|||||Item a anular|100000|100000|2100|||||1234|1|7
+0B02|0001|||||Item a anular|100000|100000|2100|||||1234|1|7
+0B02|0000|||||Item IVA no general|100000|100000|1050|||||1234|1|7
+0B02|0000|||||Item IVA exento|100000|100000|0|||||1234|1|2
+0B02|0000|||||Item no gravado|100000|100000|0|||||1234|1|1
+0B02|0000|||||Item imp.int. fijo|100000|100000|2100|200000||||1234|1|7
+0B02|0000|||||Item imp.int. porc.|100000|100000|2100||83330000|||1234|1|7
+0B02|0000|Linea de descripcion 4|Linea de descripcion 3|Linea de descripcion 2|Linea de descripcion 1|Item completo|95555|95545|1050||82690000|||1234|1|7
+0B02|0004|||||Oferta sobre un item|10000|100000|2100|||||1234|1|7
+0B02|0000|||||Item con cantidad|100000|100000|2100|||||1234|1|7
+0B02|0006|||||Descuento en $ sobre un item|10000|100000|2100|||||1234|1|7
+0B02|0008|||||Recargo en $ sobre un item|10000|100000|2100|||||1234|1|7
+0B04|0000|Oferta del dia|10000||101||Linea 2 de la oferta|Linea 3 de la oferta
+0B04|0001|Recargo Tarjeta de Credito|5000||101||Linea 2 del recargo|Linea 3 del recargo
+0B06|0107||||||

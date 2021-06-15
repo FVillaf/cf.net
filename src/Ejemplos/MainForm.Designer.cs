@@ -42,10 +42,19 @@ namespace Ejemplos
             this.btTest_NDA = new System.Windows.Forms.Button();
             this.btTest_NCB = new System.Windows.Forms.Button();
             this.btTest_NCA = new System.Windows.Forms.Button();
-            this.btTest_Z = new System.Windows.Forms.Button();
+            this.btReimpProc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btTest_GEN = new System.Windows.Forms.Button();
+            this.cbDocNro = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbDocList = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chkXml = new System.Windows.Forms.CheckBox();
+            this.chkPrint = new System.Windows.Forms.CheckBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btConfComu
@@ -64,7 +73,7 @@ namespace Ejemplos
             // 
             this.labPapel.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Bold);
             this.labPapel.ForeColor = System.Drawing.Color.Red;
-            this.labPapel.Location = new System.Drawing.Point(322, 76);
+            this.labPapel.Location = new System.Drawing.Point(381, 9);
             this.labPapel.Name = "labPapel";
             this.labPapel.Size = new System.Drawing.Size(207, 26);
             this.labPapel.TabIndex = 1;
@@ -171,15 +180,15 @@ namespace Ejemplos
             this.btTest_NCA.UseVisualStyleBackColor = true;
             this.btTest_NCA.Click += new System.EventHandler(this.btTest_Click);
             // 
-            // btTest_Z
+            // btReimpProc
             // 
-            this.btTest_Z.Location = new System.Drawing.Point(315, 43);
-            this.btTest_Z.Name = "btTest_Z";
-            this.btTest_Z.Size = new System.Drawing.Size(214, 23);
-            this.btTest_Z.TabIndex = 12;
-            this.btTest_Z.Text = "Cierre Diario (Z)";
-            this.btTest_Z.UseVisualStyleBackColor = true;
-            this.btTest_Z.Click += new System.EventHandler(this.btTest_Click);
+            this.btReimpProc.Location = new System.Drawing.Point(181, 69);
+            this.btReimpProc.Name = "btReimpProc";
+            this.btReimpProc.Size = new System.Drawing.Size(133, 23);
+            this.btReimpProc.TabIndex = 12;
+            this.btReimpProc.Text = "Procesar";
+            this.btReimpProc.UseVisualStyleBackColor = true;
+            this.btReimpProc.Click += new System.EventHandler(this.btReimpProc_Click);
             // 
             // panel1
             // 
@@ -195,7 +204,7 @@ namespace Ejemplos
             // 
             // btTest_GEN
             // 
-            this.btTest_GEN.Location = new System.Drawing.Point(315, 14);
+            this.btTest_GEN.Location = new System.Drawing.Point(12, 263);
             this.btTest_GEN.Name = "btTest_GEN";
             this.btTest_GEN.Size = new System.Drawing.Size(214, 23);
             this.btTest_GEN.TabIndex = 15;
@@ -203,15 +212,126 @@ namespace Ejemplos
             this.btTest_GEN.UseVisualStyleBackColor = true;
             this.btTest_GEN.Click += new System.EventHandler(this.btTest_Click);
             // 
+            // cbDocNro
+            // 
+            this.cbDocNro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cbDocNro.Location = new System.Drawing.Point(70, 33);
+            this.cbDocNro.Name = "cbDocNro";
+            this.cbDocNro.Size = new System.Drawing.Size(120, 20);
+            this.cbDocNro.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(5, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tipo:";
+            // 
+            // cbDocList
+            // 
+            this.cbDocList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDocList.FormattingEnabled = true;
+            this.cbDocList.Items.AddRange(new object[] {
+            "083 - Ticket ACF",
+            "080 - Cierre Z",
+            "081 - TickFact A",
+            "082 - TickFact B",
+            "111 - TickFact C",
+            "118 - TickFact M",
+            "110 - N/Cred ACF",
+            "112 - N/Cred A",
+            "113 - N/Cred B",
+            "114 - N/Cred C",
+            "119 - N/Cred M",
+            "115 - N/Deb A",
+            "116 - N/Deb B",
+            "117 - N/Deb C",
+            "120 - N/Deb M",
+            "91 - Remito R",
+            "901 - Remito X",
+            "902 - Recibo X",
+            "903 - Presupuesto X",
+            "907 - Donación",
+            "910 - Genérico",
+            "923 - SysMessage",
+            "950 - Interno",
+            "951 - Cambio Fecha",
+            "952 - Cambio Respon",
+            "953 - Cambio IIBB"});
+            this.cbDocList.Location = new System.Drawing.Point(70, 7);
+            this.cbDocList.Name = "cbDocList";
+            this.cbDocList.Size = new System.Drawing.Size(142, 21);
+            this.cbDocList.TabIndex = 17;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Info;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.chkPrint);
+            this.panel2.Controls.Add(this.chkXml);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.cbDocNro);
+            this.panel2.Controls.Add(this.btReimpProc);
+            this.panel2.Controls.Add(this.cbDocList);
+            this.panel2.Location = new System.Drawing.Point(269, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(319, 107);
+            this.panel2.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(5, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Número:";
+            // 
+            // chkXml
+            // 
+            this.chkXml.AutoSize = true;
+            this.chkXml.Checked = true;
+            this.chkXml.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkXml.Location = new System.Drawing.Point(70, 82);
+            this.chkXml.Name = "chkXml";
+            this.chkXml.Size = new System.Drawing.Size(99, 17);
+            this.chkXml.TabIndex = 19;
+            this.chkXml.Text = "Captura XML";
+            this.chkXml.UseVisualStyleBackColor = true;
+            // 
+            // chkPrint
+            // 
+            this.chkPrint.AutoSize = true;
+            this.chkPrint.Checked = true;
+            this.chkPrint.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPrint.Location = new System.Drawing.Point(70, 62);
+            this.chkPrint.Name = "chkPrint";
+            this.chkPrint.Size = new System.Drawing.Size(76, 17);
+            this.chkPrint.TabIndex = 20;
+            this.chkPrint.Text = "Imprimir";
+            this.chkPrint.UseVisualStyleBackColor = true;
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "xml";
+            this.saveFileDialog.Filter = "Archivos XML|*.xml|Todos los archivos|*.*";
+            this.saveFileDialog.RestoreDirectory = true;
+            this.saveFileDialog.Title = "Grabar Archivo XML";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(600, 270);
+            this.ClientSize = new System.Drawing.Size(600, 298);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btTest_GEN);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btTest_Z);
             this.Controls.Add(this.btTest_NCB);
             this.Controls.Add(this.btTest_NCA);
             this.Controls.Add(this.btTest_NDB);
@@ -230,6 +350,8 @@ namespace Ejemplos
             this.Text = " Moretti Génesis - Pruebas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -248,9 +370,17 @@ namespace Ejemplos
         private System.Windows.Forms.Button btTest_NDA;
         private System.Windows.Forms.Button btTest_NCB;
         private System.Windows.Forms.Button btTest_NCA;
-        private System.Windows.Forms.Button btTest_Z;
+        private System.Windows.Forms.Button btReimpProc;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btTest_GEN;
+        private System.Windows.Forms.TextBox cbDocNro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbDocList;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chkPrint;
+        private System.Windows.Forms.CheckBox chkXml;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

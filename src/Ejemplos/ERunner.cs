@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +34,7 @@ namespace Ejemplos
             var mo = proto.ExchangePacket(cmd);
             if(mo == null)
             {
-                errorShow(proto.LastError);
+                errorShow(proto.LastError ?? "Error de Comunicación");
                 return false;
             }
             if(mo.ErrorCodeInt != 0)
@@ -815,6 +817,82 @@ namespace Ejemplos
             cmdC.Input.CortaPapel = true;       // Indica guillotinar el papel al final
             ExecCommand(cmdC);
         }
+        #endregion
+
+        #region Reimpresión de Comprobantes
+
+        /// <summary>
+        /// Método que reimprime un comprobante u, opcionalmente, descarga el XML relacionado.
+        /// </summary>
+        /// <param name="codDoc">Código del documento a manejar</param>
+        /// <param name="nroDoc">Número del documento a manejar</param>
+        /// <param name="doPrint"><b>true</b> para reimprimir el documento</param>
+        /// <param name="doXml"><b>true</b> para capturar el xml del documento</param>
+        /// <param name="saveXml">Action a llamar cuando se complete la descarga del XML</param>
+        public void Reprint(int codDoc, int nroDoc, bool doPrint, bool doXml, Action<string> saveXml)
+        {
+            string xml = "";
+
+            var start = new CMD_JORDupliInicia();
+            start.Input.NumeroDoc = nroDoc.ToString();
+            start.Input.TipoDoc = codDoc;
+            start.Input.Zipeado = true;
+            start.Input.Pendrive = false;
+            start.Input.Print = doPrint;
+            if (ExecCommand(start))
+            {
+                try
+                {
+                    // Uso 'doXml' para no procesar el loop de descarga del XML si no se quiere
+                    // el xml sino, solo, una reimpresión.
+                    while (doXml)
+                    {
+                        var gloop = new CMD_JORDupliEnumera();
+                        if (ExecCommand(gloop))
+                        {
+                            var rcvData = ProcessDownloadData(gloop.Output.Data, true);
+                            xml += Encoding.UTF8.GetString(rcvData);
+                            if (gloop.Output.Continua)
+                                continue;
+                        }
+
+                        // Sea que toda la lectura se completó o que el comando gloop fallo, sale del loop
+                        break;
+                    }
+                }
+                finally { ExecCommand(new CMD_JORDupliFinal()); }
+            }
+
+            if (doXml && saveXml != null)
+                saveXml(xml);
+        }
+
+        /// <summary>
+        /// Método auxiliar que deszipea (si hace falta) el contenido recibido.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="zipeado"></param>
+        /// <returns></returns>
+        byte[] ProcessDownloadData(string data, bool zipeado)
+        {
+            if (!zipeado)
+                return Encoding.UTF8.GetBytes(data);
+
+            // Los primeros 2 bytes deben ser ignorados. La explicación está en:
+            // http://george.chiramattel.com/blog/2007/09/deflatestream-block-length-does-not-match.html
+            var buffer = Convert.FromBase64String(data);
+            byte[] strippedBuffer = new byte[buffer.Length - 2];
+            Array.Copy(buffer, 2, strippedBuffer, 0, buffer.Length - 2);
+
+            using (var compressedStream = new MemoryStream(strippedBuffer))
+            using (var zipStream = new DeflateStream(compressedStream, CompressionMode.Decompress))
+            using (var resultStream = new MemoryStream())
+            {
+                zipStream.CopyTo(resultStream);
+                return resultStream.ToArray();
+            }
+        }
+
         #endregion
     }
 }

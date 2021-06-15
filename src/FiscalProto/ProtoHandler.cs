@@ -406,7 +406,6 @@ namespace FiscalProto
                         return null;
                     }
                 }
-                return mo;
             }
             return cancelling? null: mo;
         }

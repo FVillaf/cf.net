@@ -1,2 +1,2 @@
 # cf.net
-Librería en .NET para usar los CF de Moretti.
+Documentación y código de ejemplo para el controlador fiscal Moretti/Genesis

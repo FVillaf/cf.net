@@ -29,6 +29,9 @@ bld/
 [Oo]bj/
 [Dd]ocsrc/
 
+# Mis fuentes para el OCX
+[Oo]cx/*
+
 # Visual Studio 2015 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot

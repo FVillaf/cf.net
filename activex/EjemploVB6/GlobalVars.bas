@@ -1,15 +1,15 @@
 Attribute VB_Name = "GlobalVars"
-Public x As Object
+Public x As GenesisOCX.GenesisOCX
 
-Public Function PrepareGenesis(pName As String) As Boolean
+Public Function PrepareGenesis(pName As String) As GenesisOCX.GenesisOCX
 
-Set x = CreateObject("moretti.fiscalproto")
+Set x = CreateObject("GenesisOCX")
 If Not x.open(pName) Then
     MsgBox "no puedo abrir el port"
-    PrepareGenesis = False
-Else
-    PrepareGenesis = True
 End If
+
+Set PrepareGenesis = x
 End Function
+
 
 

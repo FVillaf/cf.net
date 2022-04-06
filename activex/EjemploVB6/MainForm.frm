@@ -78,6 +78,46 @@ Begin VB.Form MainForm
       Top             =   1560
       Width           =   2295
    End
+   Begin VB.Label lbOcupado 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Impresor Ocupado"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   375
+      Left            =   960
+      TabIndex        =   10
+      Top             =   1080
+      Visible         =   0   'False
+      Width           =   2775
+   End
+   Begin VB.Label lbFaltaPapel 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Falta Papel"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   375
+      Left            =   1440
+      TabIndex        =   9
+      Top             =   3960
+      Visible         =   0   'False
+      Width           =   1815
+   End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       BackColor       =   &H00FFC0C0&
@@ -142,28 +182,47 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim listo As Boolean
+Dim WithEvents x As GenesisOCX.GenesisOCX
+Attribute x.VB_VarHelpID = -1
+
+Private Sub x_FaltaPapel()
+    lbFaltaPapel.Visible = True
+    lbOcupado.Visible = False
+    DoEvents
+End Sub
+
+Private Sub x_Ocupado()
+    lbOcupado.Visible = True
+    DoEvents
+End Sub
+
+Private Sub x_LimpiarEventos()
+    lbFaltaPapel.Visible = False
+    lbOcupado.Visible = False
+    DoEvents
+End Sub
 
 Private Sub Command1_Click()
-
-If PrepareGenesis(tbPort.Text) Then
+Set x = PrepareGenesis(tbPort.Text)
+If x.IsOpened Then
     
     ' Abre el ticket
-    x.execute (x.ticket.tkabrir)
+    x.Execute (x.Ticket.tkabrir)
     
     ' Prepara y envia un item simle
-    x.ticket.tkitem.input.descrip = "ACEITE PATITO LATA"
-    x.ticket.tkitem.input.cantidad = 3
-    x.ticket.tkitem.input.unitario = 13.5
-    x.ticket.tkitem.input.tasaiva = 2100
-    x.execute (x.ticket.tkitem)
+    x.Ticket.tkitem.Input.Descrip = "ACEITE PATITO LATA"
+    x.Ticket.tkitem.Input.Cantidad = 3
+    x.Ticket.tkitem.Input.Unitario = 13.5
+    x.Ticket.tkitem.Input.TasaIVA = 2100
+    x.Execute (x.Ticket.tkitem)
     
     ' Agrega un medio de pago
-    x.ticket.tkpago.input.codigo = 7
-    x.ticket.tkpago.input.monto = 100
-    x.execute (x.ticket.tkpago)
+    x.Ticket.tkpago.Input.Codigo = 7
+    x.Ticket.tkpago.Input.Monto = 100
+    x.Execute (x.Ticket.tkpago)
     
     ' Cierra la operacion
-    x.execute (x.ticket.tkcerrar)
+    x.Execute (x.Ticket.tkcerrar)
     
     ' Cierra el canal de comunicacion (opcional)
     x.Close
@@ -172,31 +231,32 @@ End If
 End Sub
 
 Private Sub Command2_Click()
-If PrepareGenesis(tbPort.Text) Then
+Set x = PrepareGenesis(tbPort.Text)
+If x.IsOpened Then
     
     ' Abre el ticket factura con datos de comprador
-    x.ticketfactura.tfabrir.input.nomcliente_1 = "Pescado SRL"
-    x.ticketfactura.tfabrir.input.direccliente_1 = "Solorzano 950"
-    x.ticketfactura.tfabrir.input.direccliente_2 = "Salta Capital"
-    x.ticketfactura.tfabrir.input.tipodoc = Asc("T")
-    x.ticketfactura.tfabrir.input.nrodoc = "20168993278"
-    x.ticketfactura.tfabrir.input.respiva = Asc("I")
-    x.execute (x.ticketfactura.tfabrir)
+    x.TicketFactura.tfabrir.Input.NomCliente_1 = "Pescado SRL"
+    x.TicketFactura.tfabrir.Input.DirecCliente_1 = "Solorzano 950"
+    x.TicketFactura.tfabrir.Input.DirecCliente_2 = "Salta Capital"
+    x.TicketFactura.tfabrir.Input.TipoDoc = Asc("T")
+    x.TicketFactura.tfabrir.Input.NroDoc = "20168993278"
+    x.TicketFactura.tfabrir.Input.RespIVA = Asc("I")
+    x.Execute (x.TicketFactura.tfabrir)
     
     ' Prepara y envia un item simle
-    x.ticketfactura.tfitem.input.descrip = "ACEITE PATITO LATA"
-    x.ticketfactura.tfitem.input.cantidad = 3
-    x.ticketfactura.tfitem.input.unitario = 13.5
-    x.ticketfactura.tfitem.input.tasaiva = 2100
-    x.execute (x.ticketfactura.tfitem)
+    x.TicketFactura.tfitem.Input.Descrip = "ACEITE PATITO LATA"
+    x.TicketFactura.tfitem.Input.Cantidad = 3
+    x.TicketFactura.tfitem.Input.Unitario = 13.5
+    x.TicketFactura.tfitem.Input.TasaIVA = 2100
+    x.Execute (x.TicketFactura.tfitem)
     
     ' Agrega un medio de pago
-    x.ticketfactura.tfpago.input.codigo = 7
-    x.ticketfactura.tfpago.input.monto = 100
-    x.execute (x.ticketfactura.tfpago)
+    x.TicketFactura.tfpago.Input.Codigo = 7
+    x.TicketFactura.tfpago.Input.Monto = 100
+    x.Execute (x.TicketFactura.tfpago)
     
     ' Cierra la operacion
-    x.execute (x.ticketfactura.tfcerrar)
+    x.Execute (x.TicketFactura.tfcerrar)
     
     ' Cierra el canal de comunicacion (opcional)
     x.Close
@@ -207,31 +267,32 @@ End Sub
 
 Private Sub Command3_Click()
     
-If PrepareGenesis(tbPort.Text) Then
+Set x = PrepareGenesis(tbPort.Text)
+If x.IsOpened Then
     
     ' Abre el ticket factura con datos de comprador
-    x.ticketfactura.tfabrir.input.nomcliente_1 = "Alberto Fer"
-    x.ticketfactura.tfabrir.input.direccliente_1 = "Rivadavia 1"
-    x.ticketfactura.tfabrir.input.direccliente_2 = "CABA"
-    x.ticketfactura.tfabrir.input.tipodoc = Asc("T")
-    x.ticketfactura.tfabrir.input.nrodoc = "20168993278"
-    x.ticketfactura.tfabrir.input.respiva = Asc("M")
-    x.execute (x.ticketfactura.tfabrir)
+    x.TicketFactura.tfabrir.Input.NomCliente_1 = "Alberto Fer"
+    x.TicketFactura.tfabrir.Input.DirecCliente_1 = "Rivadavia 1"
+    x.TicketFactura.tfabrir.Input.DirecCliente_2 = "CABA"
+    x.TicketFactura.tfabrir.Input.TipoDoc = Asc("T")
+    x.TicketFactura.tfabrir.Input.NroDoc = "20168993278"
+    x.TicketFactura.tfabrir.Input.RespIVA = Asc("M")
+    x.Execute (x.TicketFactura.tfabrir)
     
     ' Prepara y envia un item simle
-    x.ticketfactura.tfitem.input.descrip = "ACEITE PATITO LATA"
-    x.ticketfactura.tfitem.input.cantidad = 3
-    x.ticketfactura.tfitem.input.unitario = 13.5
-    x.ticketfactura.tfitem.input.tasaiva = 2100
-    x.execute (x.ticketfactura.tfitem)
+    x.TicketFactura.tfitem.Input.Descrip = "ACEITE PATITO LATA"
+    x.TicketFactura.tfitem.Input.Cantidad = 3
+    x.TicketFactura.tfitem.Input.Unitario = 13.5
+    x.TicketFactura.tfitem.Input.TasaIVA = 2100
+    x.Execute (x.TicketFactura.tfitem)
     
     ' Agrega un medio de pago
-    x.ticketfactura.tfpago.input.codigo = 7
-    x.ticketfactura.tfpago.input.monto = 100
-    x.execute (x.ticketfactura.tfpago)
+    x.TicketFactura.tfpago.Input.Codigo = 7
+    x.TicketFactura.tfpago.Input.Monto = 100
+    x.Execute (x.TicketFactura.tfpago)
     
     ' Cierra la operacion
-    x.execute (x.ticketfactura.tfcerrar)
+    x.Execute (x.TicketFactura.tfcerrar)
     
     ' Cierra el canal de comunicacion (opcional)
     x.Close
@@ -242,10 +303,11 @@ End Sub
 
 Private Sub Command4_Click()
 
-If PrepareGenesis(tbPort.Text) Then
+Set x = PrepareGenesis(tbPort.Text)
+If x.IsOpened Then
     
     ' Emite un cierre diario ZETA
-    x.execute (x.jornadafiscal.jorzeta)
+    x.Execute (x.JornadaFiscal.jorzeta)
     x.Close
     
 End If
@@ -265,7 +327,8 @@ End Sub
 Private Sub timer_Timer()
 
 timer.Enabled = False
-If PrepareGenesis(tbPort.Text) Then
+Set x = PrepareGenesis(tbPort.Text)
+If x.IsOpened Then
 
    lSerie.Caption = x.GetSerial()
    listo = True

@@ -182,7 +182,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim listo As Boolean
-Dim WithEvents x As GenesisOCX.GenesisOCX
+Dim WithEvents x As GenesisOCX.GenesisCF
 Attribute x.VB_VarHelpID = -1
 
 Private Sub x_FaltaPapel()

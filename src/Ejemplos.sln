@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31005.135
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplos", "Ejemplos\Ejemplos.csproj", "{7FFCD035-9D88-41FB-9B5C-038FDC9FAB7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiscalProto", "FiscalProto\FiscalProto.csproj", "{769F247F-A107-43DD-9CFF-E8FCC9C19E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDownload", "MDownload\MDownload.csproj", "{BE43227D-AC73-4902-BFA1-1E6646AB484B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{769F247F-A107-43DD-9CFF-E8FCC9C19E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{769F247F-A107-43DD-9CFF-E8FCC9C19E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{769F247F-A107-43DD-9CFF-E8FCC9C19E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE43227D-AC73-4902-BFA1-1E6646AB484B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE43227D-AC73-4902-BFA1-1E6646AB484B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE43227D-AC73-4902-BFA1-1E6646AB484B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE43227D-AC73-4902-BFA1-1E6646AB484B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

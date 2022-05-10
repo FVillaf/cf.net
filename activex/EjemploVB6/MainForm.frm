@@ -187,12 +187,20 @@ Attribute x.VB_VarHelpID = -1
 
 Private Sub x_FaltaPapel()
     lbFaltaPapel.Visible = True
+    lbFaltaPapel.Caption = "Falta Papel"
     lbOcupado.Visible = False
     DoEvents
 End Sub
 
 Private Sub x_Ocupado()
     lbOcupado.Visible = True
+    DoEvents
+End Sub
+
+Private Sub x_Apagado()
+    lbFaltaPapel.Visible = True
+    lbFaltaPapel.Caption = "Apagado"
+    lbOcupado.Visible = False
     DoEvents
 End Sub
 

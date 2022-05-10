@@ -1,6 +1,6 @@
 Type=Exe
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\Windows\system32\stdole2.tlb#OLE Automation
-Reference=*\G{24A7CA84-1981-356A-A392-8386A7DD990B}#1.0#0#GenesisOCX.tlb#GenesisOCX
+Reference=*\G{04378049-8E71-35A0-8310-C6AEAE394DB6}#1.0#0#GenesisOCX.tlb#GenesisOCX
 Form=MainForm.frm
 Module=GlobalVars; GlobalVars.bas
 IconForm="MainForm"

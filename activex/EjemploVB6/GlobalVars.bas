@@ -8,6 +8,7 @@ If Not x.Open(pName) Then
     MsgBox "no puedo abrir el port"
 End If
 
+x.AbortarSiApagado = True
 Set PrepareGenesis = x
 
 End Function

@@ -1,0 +1,1617 @@
+﻿
+<style type="text/css">
+	.body1 { font-family:Verdana; }
+	table { font-size: 10px; }
+	td { border:1px solid;}
+	td.section { border:none; font-size:140%; font-weight:bold; padding-top: 10px; }
+	td.col2 { text-align: center; min-width:100px; }
+	tr.header { font-weight: bold; }
+</style>
+<p class="body1">
+	<table>
+			<tr class="section">
+			<td class="section" colspan="3">Códigos especiales</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_NONE</td>
+			<td class="col2">0x0000</td>
+			<td class="col3"></td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INTERNAL</td>
+			<td class="col2">0x8001</td>
+			<td class="col3">Error interno</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INTERNALPROCESSING</td>
+			<td class="col2">0x8003</td>
+			<td class="col3">Error de proceso interno</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_SYSLOG_DISKERROR</td>
+			<td class="col2">0x8004</td>
+			<td class="col3">Error al grabar datos en SysLog</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_NOT_IMPLEMENTED</td>
+			<td class="col2">0x8005</td>
+			<td class="col3">Comando no implementado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_NOT_ENOUGH_MEMORY</td>
+			<td class="col2">0x8006</td>
+			<td class="col3">Sin memoria suficiente</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OVERFLOW_ITEM</td>
+			<td class="col2">0x8007</td>
+			<td class="col3">El monto máximo por item es 9999999.99</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OVERFLOW_OPERATION</td>
+			<td class="col2">0x8008</td>
+			<td class="col3">El monto máximo por operación es 999999999.99</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OVERFLOW_JORNADA</td>
+			<td class="col2">0x8009</td>
+			<td class="col3">El monto máximo por jornada es 99999999999.99</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OVERFLOW_QUANTITY</td>
+			<td class="col2">0x800A</td>
+			<td class="col3">La cantidad máxima a multiplicar es 99999.9999</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OVERFLOW_NEGATIVE</td>
+			<td class="col2">0x800B</td>
+			<td class="col3">El monto final de un item no puede ser negativo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OVERFLOW_CONSFINAL</td>
+			<td class="col2">0x800C</td>
+			<td class="col3">Supera el monto permitido para ticket/nc a consumidor final</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_BLOQ_GENERIC</td>
+			<td class="col2">0x8050</td>
+			<td class="col3">El controlador fiscal está bloqueado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_BLOQ_NO_SPACE</td>
+			<td class="col2">0x8051</td>
+			<td class="col3">No hay espacio suficiente como para iniciar una nueva transacción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_BLOQ_NO_SPACE_ITEM</td>
+			<td class="col2">0x8052</td>
+			<td class="col3">No hay espacio suficiente para continuar la transacción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_BLOQ_FULL</td>
+			<td class="col2">0x8053</td>
+			<td class="col3">Se llenó la memoria fiscal</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_BLOQ_TOO_TECH</td>
+			<td class="col2">0x8054</td>
+			<td class="col3">Solo se permiten hasta 100 desbloqueos como máximo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TOO_MANY_ITEMS</td>
+			<td class="col2">0x8055</td>
+			<td class="col3">Demasiados items en la transaccion</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TELEK_TOO_LONG</td>
+			<td class="col2">0x8080</td>
+			<td class="col3">Nombre de tecla remota de mas de 16 caracteres</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TELEK_INVALID_KEY</td>
+			<td class="col2">0x8081</td>
+			<td class="col3">Tecla invalida o desconocida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_PAPER_80</td>
+			<td class="col2">0x8082</td>
+			<td class="col3">Use papel 80mm</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_PAPER_57</td>
+			<td class="col2">0x8083</td>
+			<td class="col3">Use papel 57mm</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Errores genéricos al procesar los comandos</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_INVALID_STATE</td>
+			<td class="col2">0x0101</td>
+			<td class="col3">Comando invalido para el estado actual</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_INVALID_DOC</td>
+			<td class="col2">0x0102</td>
+			<td class="col3">Comando invalido para el documento actual</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_ONLY_TECHNICAL</td>
+			<td class="col2">0x0103</td>
+			<td class="col3">Comando solo aceptado en modo tecnico</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_REMOVE_TECHSWITCH</td>
+			<td class="col2">0x0104</td>
+			<td class="col3">Comando solo aceptado sin Jumper de Servicio</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_MISSING_TECHSWITCH</td>
+			<td class="col2">0x0105</td>
+			<td class="col3">Comando solo aceptado con Jumper de Servicio</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_REMOVE_INTSWITCH</td>
+			<td class="col2">0x0106</td>
+			<td class="col3">Comando solo aceptado sin Jumper de Uso Interno</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_MISSING_INTSWITCH</td>
+			<td class="col2">0x0107</td>
+			<td class="col3">Comando solo aceptado con Jumper de Uso Interno</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_TOOMANY_TECH</td>
+			<td class="col2">0x0109</td>
+			<td class="col3">Limite de intervenciones tecnicas alcanzado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_BLOQUEADO</td>
+			<td class="col2">0x010A</td>
+			<td class="col3">El controlador fiscal está bloqueado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CMDINPUT_CANNOTPRINT</td>
+			<td class="col2">0x010B</td>
+			<td class="col3">No puede abrir DNFH en este momento</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Errores relacionados con el protocolo</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_LENGTH</td>
+			<td class="col2">0x0201</td>
+			<td class="col3">El frame no es del largo minimo aceptado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_COMMAND</td>
+			<td class="col2">0x0202</td>
+			<td class="col3">Comando invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_TOOMANY_FIELDS</td>
+			<td class="col2">0x0203</td>
+			<td class="col3">El comando tiene MAS campos de los que soporta</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_MISSING_FIELDS</td>
+			<td class="col2">0x0204</td>
+			<td class="col3">El comando tiene MENOS campos de los que necesita</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_OPTIONAL_USAGE</td>
+			<td class="col2">0x0205</td>
+			<td class="col3">Falta un campo que no opcional</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_ALPHANUM</td>
+			<td class="col2">0x0206</td>
+			<td class="col3">Campo alfanumerico invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_ALPHA</td>
+			<td class="col2">0x0207</td>
+			<td class="col3">Campo alfabetico invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_NUMERIC</td>
+			<td class="col2">0x0208</td>
+			<td class="col3">Campo numerico invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_BINARY</td>
+			<td class="col2">0x0209</td>
+			<td class="col3">Campo binario invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_PRINTABLE</td>
+			<td class="col2">0x020A</td>
+			<td class="col3">Campo imprimible invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_HEXADECIMAL</td>
+			<td class="col2">0x020B</td>
+			<td class="col3">Campo hexadecimal invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_DATE</td>
+			<td class="col2">0x020C</td>
+			<td class="col3">Campo fecha invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_TIME</td>
+			<td class="col2">0x020D</td>
+			<td class="col3">Campo hora invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_RICHTEXT</td>
+			<td class="col2">0x020E</td>
+			<td class="col3">Campo fiscal rich text invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_BOOLEAN</td>
+			<td class="col2">0x020F</td>
+			<td class="col3">Campo booleano invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_FIELD_LENGTH</td>
+			<td class="col2">0x0210</td>
+			<td class="col3">Largo del campo invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_EXTENSION</td>
+			<td class="col2">0x0211</td>
+			<td class="col3">Extension del comando invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_BARCODE_NOT_ALLOWED</td>
+			<td class="col2">0x0212</td>
+			<td class="col3">Codigo de barra no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_PRINTATTRIB_NOT_SUPPORTED</td>
+			<td class="col2">0x0213</td>
+			<td class="col3">Atributos de impresion no permitidos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_PRINTATTRIB</td>
+			<td class="col2">0x0214</td>
+			<td class="col3">Atributo de impresion invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_BARCODE</td>
+			<td class="col2">0x0215</td>
+			<td class="col3">Codigo de barra incorrectamente definido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_AVOID_TOTAL_STRING</td>
+			<td class="col2">0x0216</td>
+			<td class="col3">La palabra total (o sus variantes) no se permite</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_OUTOFRANGE</td>
+			<td class="col2">0x0217</td>
+			<td class="col3">Importe fuera del rango habilitado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_AVOID_2_FIELDS</td>
+			<td class="col2">0x0219</td>
+			<td class="col3">Uno de dos campos no se debe indicar</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_ERROR_DOWNLOADING</td>
+			<td class="col2">0x0250</td>
+			<td class="col3">Error al descargar el reporte de eventos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FRAME_INVALID_SEQUENCE</td>
+			<td class="col2">0x0251</td>
+			<td class="col3">Secuencia de descarga del reporte de eventos invalida</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos sobre problemas de hardware</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_GENERAL</td>
+			<td class="col2">0x0301</td>
+			<td class="col3">Error de hardware</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_OFFLINE</td>
+			<td class="col2">0x0302</td>
+			<td class="col3">Impresora fuera de linea</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_PRINTING</td>
+			<td class="col2">0x0303</td>
+			<td class="col3">Error de Impresion</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_NOPAPER</td>
+			<td class="col2">0x0304</td>
+			<td class="col3">Falta papel en el impresor</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_PAPERLOW</td>
+			<td class="col2">0x0305</td>
+			<td class="col3">Poco papel disponible</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_PAPERLOADING</td>
+			<td class="col2">0x0306</td>
+			<td class="col3">Error en carga o expulsion de papel</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_NOTSUPPORTED</td>
+			<td class="col2">0x0307</td>
+			<td class="col3">Caracteristica de impresora no soportada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_DISPLAY</td>
+			<td class="col2">0x0308</td>
+			<td class="col3">Error de display</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_SCANNING</td>
+			<td class="col2">0x0309</td>
+			<td class="col3">Secuencia de scan invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_CROPPING</td>
+			<td class="col2">0x030A</td>
+			<td class="col3">Número de área de recorte(crop area) invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_SCANNER_OFFLINE</td>
+			<td class="col2">0x030B</td>
+			<td class="col3">Scanner no preparado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_BAD_RESOLUTION</td>
+			<td class="col2">0x030C</td>
+			<td class="col3">Resolucion de logotipo de la empresa no permitida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_HARD_NO_FOR_TERMAL</td>
+			<td class="col2">0x030D</td>
+			<td class="col3">Imposible imprimir documento en estacion termica</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FISCALMEM_UNACCESIBLE</td>
+			<td class="col2">0x030E</td>
+			<td class="col3">La memoria fiscal no está conectada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_FISCALMEM_INVALID_OPERATION</td>
+			<td class="col2">0x030F</td>
+			<td class="col3">Operación inválida en la memoria fiscal</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_PENDRIVE_NO_CONECTED</td>
+			<td class="col2">0x0310</td>
+			<td class="col3">Pendrive no conectado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_PENDRIVE_GENERAL</td>
+			<td class="col2">0x0311</td>
+			<td class="col3">Error usando el pendrive</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_PENDRIVE_MEMORY</td>
+			<td class="col2">0x0312</td>
+			<td class="col3">Poca memoria usando el pendrive</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos sobre inicializacion, altas y bajas</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_SERINV</td>
+			<td class="col2">0x0401</td>
+			<td class="col3">Numero de serie invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_MISSING_DOWNLOAD</td>
+			<td class="col2">0x0404</td>
+			<td class="col3">Aun no se realizo al menos uno de los dos tipo de descargas requeridas para las jornadas fiscales. Descarga completa o descarga de documentos tipo A</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_ONLY_REFRESH_EQUIP</td>
+			<td class="col2">0x0406</td>
+			<td class="col3">Solo puede renovar el certificado del equipo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_BAD_HARD_SEQUENCE</td>
+			<td class="col2">0x0430</td>
+			<td class="col3">Ya se hizo la inicialización criptográfica</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_BECAUSE_BEFORETHAN</td>
+			<td class="col2">0x0431</td>
+			<td class="col3">Certificado aun no vigente</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_INVALID_SEQ_DOWNLOAD</td>
+			<td class="col2">0x0436</td>
+			<td class="col3">Secuencia de carga de certificado digital invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CANNOT_GENERATE_CSR</td>
+			<td class="col2">0x0437</td>
+			<td class="col3">No se puede generar archivo CSR</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_FAIL_CHAIN_VALID</td>
+			<td class="col2">0x0438</td>
+			<td class="col3">El certificado no tiene un emisor válido (Ej.: AFIP)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CERT_BAD_SERIAL</td>
+			<td class="col2">0x0439</td>
+			<td class="col3">No coincide el nro de serie del CF en el certificado del equipo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_INVALID_CERT</td>
+			<td class="col2">0x043A</td>
+			<td class="col3">Certificado digital inválido (Error ASN.1)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CANNOT_VALIDATE_CERT</td>
+			<td class="col2">0x043B</td>
+			<td class="col3">No se puede validar el certificado digital</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_MISSING_AFIP_CERT</td>
+			<td class="col2">0x043C</td>
+			<td class="col3">Certificado AFIP (CA) no encontrado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_MISSING_CERT_CHAIN</td>
+			<td class="col2">0x043D</td>
+			<td class="col3">Cadena de certificados no encontrada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_MISSING_EQUIP_CERT</td>
+			<td class="col2">0x043E</td>
+			<td class="col3">Falta el certificado del equipo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CERT_EXPIRED</td>
+			<td class="col2">0x043F</td>
+			<td class="col3">Certificado Digital CF vencido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CERT_BAD_SIGNATURE</td>
+			<td class="col2">0x0440</td>
+			<td class="col3">Clave pública inválida (¿el cert. es para otro equipo?)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_INVALID_CAF</td>
+			<td class="col2">0x0441</td>
+			<td class="col3">El CAF recibido para inicializar fiscalmente no es valido (o la firma no es correcta)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CAF_SERIAL_MISMATCH</td>
+			<td class="col2">0x0443</td>
+			<td class="col3">El CAF recibido no es para éste controlador fiscal (serial incorrecto)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CAF_BAJAS_MISMATCH</td>
+			<td class="col2">0x0444</td>
+			<td class="col3">El CAF recibido ya fue usado, o tiene una cuenta de bajas que no coincide</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CAF_PTOVTA_INVALID</td>
+			<td class="col2">0x0445</td>
+			<td class="col3">El CAF contiene un punto de venta inválido o fuera de rango</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_MISMATCH_SBF</td>
+			<td class="col2">0x0451</td>
+			<td class="col3">Número de bajas fiscales no coincide</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CANNOT_COPY_CERT</td>
+			<td class="col2">0x0455</td>
+			<td class="col3">No puedo preservar los datos del certificado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CANNOT_COPY_SIGNATURE</td>
+			<td class="col2">0x0456</td>
+			<td class="col3">No puedo preservar la firma del firmware</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_SBF_NEVER</td>
+			<td class="col2">0x0457</td>
+			<td class="col3">El controlador fiscal nunca fue dado de baja todavía</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_SAF</td>
+			<td class="col2">0x0458</td>
+			<td class="col3">No puede solicitar el SAF. El CF está ya de alta</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_CAF</td>
+			<td class="col2">0x0459</td>
+			<td class="col3">No puedo procesar un CAF. El CF está ya de alta</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_UPDACERT_TECH</td>
+			<td class="col2">0x045A</td>
+			<td class="col3">El certificado solo puede actualizarse en modo servicio técnico</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_GETCSR_TECH</td>
+			<td class="col2">0x045B</td>
+			<td class="col3">El CSR solo puede solicitarse en modo servicio técnico</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_INIT_SIGNATURE_BAD_B64</td>
+			<td class="col2">0x045C</td>
+			<td class="col3">La firma digital debe estar en base 64</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos sobre errores de configuracion</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_MISSING_DATETIME</td>
+			<td class="col2">0x0501</td>
+			<td class="col3">Fecha/Hora no configurada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_ERROR_SETTING_DATETIME</td>
+			<td class="col2">0x0502</td>
+			<td class="col3">Fecha u hora inválidos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_DATE_OUTOFRANGE</td>
+			<td class="col2">0x0503</td>
+			<td class="col3">Fecha fuera de rango para cambio por el usuario</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_DATE_PASSED_ZETA</td>
+			<td class="col2">0x0504</td>
+			<td class="col3">Fecha inferior a la de la última ZETA registrada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_PVTA</td>
+			<td class="col2">0x0505</td>
+			<td class="col3">Numero de caja invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_CUIT</td>
+			<td class="col2">0x0506</td>
+			<td class="col3">CUIT invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_RESP</td>
+			<td class="col2">0x0507</td>
+			<td class="col3">Responsabilidad frente al IVA invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_LINENUMBER</td>
+			<td class="col2">0x0508</td>
+			<td class="col3">Numero de línea de Encabezado/Cola invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_TOOMANY_FISC</td>
+			<td class="col2">0x0509</td>
+			<td class="col3">Demasiadas fiscalizaciones</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_TOOMANY_CHANGES_RESP</td>
+			<td class="col2">0x050A</td>
+			<td class="col3">Demasiados cambios de situacion tributaria</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_TOOMANY_CHANGES_IIBB</td>
+			<td class="col2">0x050B</td>
+			<td class="col3">Demasiados cambios del nro de Ingresos Brutos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_LOGO</td>
+			<td class="col2">0x0513</td>
+			<td class="col3">Logo de usuario invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_LOGO_SEQ</td>
+			<td class="col2">0x0514</td>
+			<td class="col3">Secuencia de definicion de logos de usuario invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_DISPLAY_CONF</td>
+			<td class="col2">0x0515</td>
+			<td class="col3">Configuracion de Display invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_FISCAL_RESPON</td>
+			<td class="col2">0x0516</td>
+			<td class="col3">Responsabilidad INVALIDA ante el IVA</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_TIPO_FACT_A</td>
+			<td class="col2">0x0517</td>
+			<td class="col3">Tipo INVALIDO de factura A</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_MISSING_STORE_ADDR</td>
+			<td class="col2">0x0518</td>
+			<td class="col3">Lineas de establecimiento no configuradas</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_MISSING_DATAFISC</td>
+			<td class="col2">0x0519</td>
+			<td class="col3">Datos fiscales no configurados</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_MISSING_RESP</td>
+			<td class="col2">0x0520</td>
+			<td class="col3">Situacion tributaria no configurada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_MISSING_STD_IVA</td>
+			<td class="col2">0x0521</td>
+			<td class="col3">Tasa de IVA estandar no configurada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_MISSING_TOPAMOUNT</td>
+			<td class="col2">0x0522</td>
+			<td class="col3">Limite de tique - factura no configurado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_TOPAMOUNT</td>
+			<td class="col2">0x0524</td>
+			<td class="col3">Monto maximo de tique-factura no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_LOGO_LENGTH</td>
+			<td class="col2">0x0525</td>
+			<td class="col3">Largo del logotipo de la empresa no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_LOGO_POSITION</td>
+			<td class="col2">0x0526</td>
+			<td class="col3">Posicion del logotipo de la empresa invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_LOGO_SIZE</td>
+			<td class="col2">0x0527</td>
+			<td class="col3">El tamaño del logotipo de la empresa excede el maximo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_ID_ALREADY_SET</td>
+			<td class="col2">0x0550</td>
+			<td class="col3">Identificador tributario ya estaba configurado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_SUMMERTIME</td>
+			<td class="col2">0x0555</td>
+			<td class="col3">Cambio de horario de verano no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_INIACT</td>
+			<td class="col2">0x0556</td>
+			<td class="col3">Formato o rango, de la línea de inicio de actividades, invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_LOGO_DISKERROR</td>
+			<td class="col2">0x0557</td>
+			<td class="col3">Error al grabar datos del logo en la SDCard</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_LOGO_BAD_DIMENSIONS</td>
+			<td class="col2">0x0558</td>
+			<td class="col3">Tamaño invalido del logo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_LOGO_NO_BASE64</td>
+			<td class="col2">0x0559</td>
+			<td class="col3">Los datos del logo no se mandaron como una cadena base64 valida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_DHCP_NOT_ALLOWED</td>
+			<td class="col2">0x055A</td>
+			<td class="col3">La opcion 'Usar DHCP' no está manejada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_IP</td>
+			<td class="col2">0x055B</td>
+			<td class="col3">Una dirección IP pasada no es válida.</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_NOTHING_CHANGED</td>
+			<td class="col2">0x055C</td>
+			<td class="col3">No hay ningún cambio nuevo</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_TASAIVA_INVALID</td>
+			<td class="col2">0x055D</td>
+			<td class="col3">Tasa IVA estándard no válida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_LIMITECF_INVALID</td>
+			<td class="col2">0x055E</td>
+			<td class="col3">Límite de Venta a 'Consumidor Final' Inválido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_CONF_INVALID_ITEM</td>
+			<td class="col2">0x055F</td>
+			<td class="col3">Item AFIP a configurar inválido</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos sobre memoria de transacciones</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_MEM_FULL_TRANSACMEM</td>
+			<td class="col2">0x0601</td>
+			<td class="col3">Memoria de transacciones llena</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_MEM_INVALID_AUD_RANGE</td>
+			<td class="col2">0x0604</td>
+			<td class="col3">Rango de auditoria solicitado sin datos</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos sobre el manejo de base de datos</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_BADNAME</td>
+			<td class="col2">0x0701</td>
+			<td class="col3">No existe la DB solicitada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_NOTFOUND</td>
+			<td class="col2">0x0702</td>
+			<td class="col3">La clave no se encontro</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_TBL</td>
+			<td class="col2">0x0703</td>
+			<td class="col3">Tabla invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_PRECIO</td>
+			<td class="col2">0x0704</td>
+			<td class="col3">PLU= El precio es negativo o muy grande</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_NOM</td>
+			<td class="col2">0x0705</td>
+			<td class="col3">PLU/CLT/MP/CAJ= El nombre no puede estar vacio</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_IVA</td>
+			<td class="col2">0x0706</td>
+			<td class="col3">PLU= La tasa de iva debe ser de 0 a 9</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_ZETA</td>
+			<td class="col2">0x0707</td>
+			<td class="col3">PLU= Debe emitir una ZETA</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_MEDIDA</td>
+			<td class="col2">0x0708</td>
+			<td class="col3">PLU= Codigo de medida invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INTERNO</td>
+			<td class="col2">0x0709</td>
+			<td class="col3">Error interno</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_DOMIC</td>
+			<td class="col2">0x070A</td>
+			<td class="col3">CLT= El domicilio no puede estar vacio</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_TDOC</td>
+			<td class="col2">0x070B</td>
+			<td class="col3">CLT= Tipo de documento invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_CUIT</td>
+			<td class="col2">0x070C</td>
+			<td class="col3">CLT= CUIT invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_RESPON</td>
+			<td class="col2">0x070D</td>
+			<td class="col3">CLT= Responsabilidad ante el iva INVALIDA</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_EXPECTED_CUIT</td>
+			<td class="col2">0x070E</td>
+			<td class="col3">CLT= Si es RI o MO, el documento debe ser CUIT</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_TIPOMP</td>
+			<td class="col2">0x070F</td>
+			<td class="col3">MP= Tipo invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_INVALID_CLAVE</td>
+			<td class="col2">0x0710</td>
+			<td class="col3">CAJERO= Clave invalida (0001 -> 9999)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DB_EXISTENTE</td>
+			<td class="col2">0x0711</td>
+			<td class="col3">El código ingresado YA EXISTE</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos de error sobre jornada fiscal</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_INIT</td>
+			<td class="col2">0x0801</td>
+			<td class="col3">Requiere periodo de actividades iniciado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_ZETA</td>
+			<td class="col2">0x0802</td>
+			<td class="col3">Require un Cierre Z</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_FULL_MEMFISC</td>
+			<td class="col2">0x0803</td>
+			<td class="col3">Memoria fiscal llena</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_JORFISC</td>
+			<td class="col2">0x0804</td>
+			<td class="col3">Requiere jornada fiscal abierta</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_AUDDATA</td>
+			<td class="col2">0x0807</td>
+			<td class="col3">Error en la solicitud de datos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_INVALID_AUDRANGE</td>
+			<td class="col2">0x0808</td>
+			<td class="col3">Error en la solicitud de datos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_AUD_PENDIENT</td>
+			<td class="col2">0x0809</td>
+			<td class="col3">Restan datos por auditar/ descargar</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_NO_MORE_DATA</td>
+			<td class="col2">0x080A</td>
+			<td class="col3">No hay más datos a descargar</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_CANNOT_OPEN_JORFISC</td>
+			<td class="col2">0x080B</td>
+			<td class="col3">No es posible abrir la jornada fiscal</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_CANNOT_CLOSE_JORFISC</td>
+			<td class="col2">0x080C</td>
+			<td class="col3">No es posible cerrar la jornada fiscal</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_INVALID_TDOC</td>
+			<td class="col2">0x0810</td>
+			<td class="col3">Tipo de documento solicitado invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_INVALID_NUMDOC</td>
+			<td class="col2">0x0811</td>
+			<td class="col3">Numero de documento solicitado invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_NUMDOC</td>
+			<td class="col2">0x0812</td>
+			<td class="col3">Documento solicitado no existente</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_DOC_COPY</td>
+			<td class="col2">0x0813</td>
+			<td class="col3">La copia del documento solicitado fue borrada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_UNSUPPORTED_DOC</td>
+			<td class="col2">0x0814</td>
+			<td class="col3">Tipo de documento no soportado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_REGISTERED_NORM</td>
+			<td class="col2">0x0815</td>
+			<td class="col3">Registrado para emitir documentos normales</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_REGISTERED_M</td>
+			<td class="col2">0x0816</td>
+			<td class="col3">Registrado para emitir documentos M</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_PREV_DOWNLOAD</td>
+			<td class="col2">0x0817</td>
+			<td class="col3">Falta descargar jornadas previas</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_ONCE_PER_JOR</td>
+			<td class="col2">0x0818</td>
+			<td class="col3">Solo se puede imprimir el cambio una unica vez dentro de la jornada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_MISSING_INIACT</td>
+			<td class="col2">0x0819</td>
+			<td class="col3">Requiere que se encuentre establecida la linea de inicio de actividades</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_JOR_ERROR_INTERNO</td>
+			<td class="col2">0x081A</td>
+			<td class="col3">Error interno al generar el archivo. Pruebe un rango reducido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_PREV_TODAY</td>
+			<td class="col2">0x0840</td>
+			<td class="col3">La fecha 'hasta' del rango elegido debe ser anterior a hoy</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_PREV_ALTA</td>
+			<td class="col2">0x0841</td>
+			<td class="col3">La fecha 'desde del rango elegido no puede ser inferior a la fecha de alta fiscal</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_OUTOFRANGE</td>
+			<td class="col2">0x0842</td>
+			<td class="col3">El dato (zeta_desde/fecha_desde) está fuera de rango</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_RANGE_EQUAL</td>
+			<td class="col2">0x0843</td>
+			<td class="col3">El rango a descargar debe ser igual a los otros arhivo(s) ya descargado(s)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_RANGE_OVERLAP</td>
+			<td class="col2">0x0844</td>
+			<td class="col3">El rango a descargar no se puede solapar con el del ulimo archivo descargado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_RANGE_MISSING</td>
+			<td class="col2">0x0845</td>
+			<td class="col3">La fecha desde debe ser superior a 1 dìa exactamente, de la ùltima descarga</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_RANGE_INVERTED</td>
+			<td class="col2">0x0846</td>
+			<td class="col3">'hasta' no puede ser menor que 'desde'</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_DELETED</td>
+			<td class="col2">0x0847</td>
+			<td class="col3">Los datos pedidos ya se descargaron antes y se borraron por necesidad</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_VACIO</td>
+			<td class="col2">0x0848</td>
+			<td class="col3">No hay ninguna zeta emitida en el rango solicitado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_SEQUENCE</td>
+			<td class="col2">0x0849</td>
+			<td class="col3">La descarga solicitada no está en secuencia</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_CERTIFICATE0</td>
+			<td class="col2">0x084A</td>
+			<td class="col3">El certificado del equipo está vencido o es inválido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_CERTIFICATE1</td>
+			<td class="col2">0x084B</td>
+			<td class="col3">El certificado intermedio de la AFIP está vencido o es inválido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_CERTIFICATE2</td>
+			<td class="col2">0x084C</td>
+			<td class="col3">El certificado raiz (CA) de la AFIP está vencido o es inválido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_ALREADY_DELETED</td>
+			<td class="col2">0x084D</td>
+			<td class="col3">Ya se borraron hasta la Z que se indicó</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_NOT_DOWNLOADED</td>
+			<td class="col2">0x084E</td>
+			<td class="col3">No se descargaron las Z que se desea borrar</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_MFARG_INVALID</td>
+			<td class="col2">0x084F</td>
+			<td class="col3">Parámetros de descarga de MF inválidos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_FULL</td>
+			<td class="col2">0x0850</td>
+			<td class="col3">Ya se hicieron las 1825 descargas posibles</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_ONLY_FULL</td>
+			<td class="col2">0x0851</td>
+			<td class="col3">Quedan 3 descargas o menos, no puede haber jornada iniciada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_ONLY_FULL2</td>
+			<td class="col2">0x0852</td>
+			<td class="col3">Quedan 3 descargas o menos, debe descargar hasta la ultima Z emitida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNL_AUDIDUPLI</td>
+			<td class="col2">0x0853</td>
+			<td class="col3">No puede emitir duplicado de auditorias</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos de error sobre transacciones genericas</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_OVERFLOW</td>
+			<td class="col2">0x0901</td>
+			<td class="col3">Overflow</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_UNDERFLOW</td>
+			<td class="col2">0x0902</td>
+			<td class="col3">Underflow</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_TOOMANY_ITEMS</td>
+			<td class="col2">0x0903</td>
+			<td class="col3">Demasiados items involucrados en la transaccion</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_TOOMANY_TAXES</td>
+			<td class="col2">0x0904</td>
+			<td class="col3">Demasiadas tasas de impuesto utilizadas</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_TOOMANY_SUBTOT_REFUND</td>
+			<td class="col2">0x0905</td>
+			<td class="col3">Demasiados descuentos / ajustes sobre subtotal involucradas en la transaccion</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_TOOMANY_PAYMENTS</td>
+			<td class="col2">0x0906</td>
+			<td class="col3">Demasiados pagos involucrados en la transaccion</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_MISSING_ITEM</td>
+			<td class="col2">0x0907</td>
+			<td class="col3">Item no encontrado o que ya fue anulado antes</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_MISSING_PAYMENT</td>
+			<td class="col2">0x0908</td>
+			<td class="col3">Pago no encontrado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_INVALID_TOTAL</td>
+			<td class="col2">0x0909</td>
+			<td class="col3">El total debe ser mayor a cero</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_TOOMANY_INTTAX</td>
+			<td class="col2">0x090A</td>
+			<td class="col3">Se permite solo un tipo de impuestos internos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_INVALID_INTTAX</td>
+			<td class="col2">0x090B</td>
+			<td class="col3">Impuesto interno no aceptado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_BONIF_CANT1</td>
+			<td class="col2">0x090C</td>
+			<td class="col3">La cantidad solo puede ser 1 en bonificaciones</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_BONIF_IMPINT</td>
+			<td class="col2">0x090D</td>
+			<td class="col3">No puede usar impuestos internos en bonificaciones</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_PTOVTA_INVALID</td>
+			<td class="col2">0x090E</td>
+			<td class="col3">El documento asociado (o su punto de venta) no es válido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_MISSING_IVA</td>
+			<td class="col2">0x090F</td>
+			<td class="col3">Tasa de IVA no encontrada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_INVALID_IVA</td>
+			<td class="col2">0x0910</td>
+			<td class="col3">Tasa de IVA inválida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_TOOBIG_JOR</td>
+			<td class="col2">0x091E</td>
+			<td class="col3">Período descargado demasiado grande</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_OPENED</td>
+			<td class="col2">0x091F</td>
+			<td class="col3">Ya hay un documento abierto</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_GEN_NOPREV</td>
+			<td class="col2">0x0929</td>
+			<td class="col3">Descto/Bonif sobre un item debe emitirse inmediatamente después de una venta</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos de error sobre ticket fiscal</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_FASE_NO_ITEMS</td>
+			<td class="col2">0x0A01</td>
+			<td class="col3">No permitido luego de descuentos / ajustes sobre el subtotal</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_FASE_NO_ITEMS_NOR_DESC</td>
+			<td class="col2">0x0A02</td>
+			<td class="col3">No permitido luego de iniciar la fase de pago</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_INVALID_ITEM_TYPE</td>
+			<td class="col2">0x0A03</td>
+			<td class="col3">Tipo de item inválido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_EMPTY_DESC</td>
+			<td class="col2">0x0A04</td>
+			<td class="col3">Línea de descripcion en blanco</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_CANT_LT_ZERO</td>
+			<td class="col2">0x0A05</td>
+			<td class="col3">Cantidad resultante menor que cero</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_CANT_GT_TOP</td>
+			<td class="col2">0x0A06</td>
+			<td class="col3">Cantidad resultante mayor a lo permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_CANT_TOTAL_GT_TOP</td>
+			<td class="col2">0x0A07</td>
+			<td class="col3">Precio total del item mayor al permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_NO_ITEMS_DESC</td>
+			<td class="col2">0x0A08</td>
+			<td class="col3">El ticket está vacío por lo que no puede hacer descuentos o recargos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_FASE_PAGO_END</td>
+			<td class="col2">0x0A0A</td>
+			<td class="col3">Fase de pago finalizada</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_INVALID_PAGO</td>
+			<td class="col2">0x0A0B</td>
+			<td class="col3">Monto de pago no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_INVALID_DESC</td>
+			<td class="col2">0x0A0C</td>
+			<td class="col3">Monto de descuento / ajuste no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_MISSING_ITEMS</td>
+			<td class="col2">0x0A0F</td>
+			<td class="col3">No permitido antes de un item</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_TOOMANY_DESC</td>
+			<td class="col2">0x0A10</td>
+			<td class="col3">Demasiadas descripciones extras</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_MISSING_CUPON</td>
+			<td class="col2">0x0A11</td>
+			<td class="col3">Falta número de cupón en tarjeta de crédito/débito</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_MISSING_MARCA</td>
+			<td class="col2">0x0A12</td>
+			<td class="col3">Falta la MARCA de la tarjeta de crédito/débito</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_INVALID_PAYCODE</td>
+			<td class="col2">0x0A31</td>
+			<td class="col3">Codigo de tipo de pago invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_DESC_CANNOT_MATCH_ITEM</td>
+			<td class="col2">0x0A32</td>
+			<td class="col3">Imposible aplicar el descuento/ ajuste particular. No se encontró un item que corresponda a la misma tasa de IVA y codigo de condición frente al IVA</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_FASE_INVALID_AFTER_TRIBUT</td>
+			<td class="col2">0x0A33</td>
+			<td class="col3">Operacion no permitida luego de Otros tributos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TK_FASE_INVALID_TRIBUT</td>
+			<td class="col2">0x0A34</td>
+			<td class="col3">Otros tributos del tipo percepciones no soportado en Tique y Tique Nota de Credito</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos de error sobre Ticket/Factura, Notas de Debito, Notas de Credito</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_DOCTYPE</td>
+			<td class="col2">0x0B01</td>
+			<td class="col3">Tipo de documento del comprador invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_OVERFLOW</td>
+			<td class="col2">0x0B02</td>
+			<td class="col3">Maximo valor aceptado fue superado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_CUIT</td>
+			<td class="col2">0x0B03</td>
+			<td class="col3">CUIT / CUIL invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_TRIBUT</td>
+			<td class="col2">0x0B04</td>
+			<td class="col3">Tipo de otros tributo invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_NUM_BLANKSIGN</td>
+			<td class="col2">0x0B05</td>
+			<td class="col3">Exceso en la cantidad de líneas de separacion de la firma</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_ZERO_TRIBUT</td>
+			<td class="col2">0x0B06</td>
+			<td class="col3">Monto cero de otros tributos no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_TOOMANY_TRIBUT</td>
+			<td class="col2">0x0B07</td>
+			<td class="col3">Demasiados Otros Tributos involucradas en la transaccion</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_TRIBUT_NOTFOUND</td>
+			<td class="col2">0x0B08</td>
+			<td class="col3">Otro tributo no encontrado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_FASE_AFTER_TRIBUT</td>
+			<td class="col2">0x0B09</td>
+			<td class="col3">Operacion no permitida luego de Otros Tributos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_TOOMANY_ITEMS</td>
+			<td class="col2">0x0B0A</td>
+			<td class="col3">Exceso de operaciones dentro del documento con triplicado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_TURIST_ONLY_B</td>
+			<td class="col2">0x0B0B</td>
+			<td class="col3">Tique factura del turista solo es aceptado en tique - factura B</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_TURIST</td>
+			<td class="col2">0x0B0C</td>
+			<td class="col3">Datos del turista invalidos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_DOC</td>
+			<td class="col2">0x0B0D</td>
+			<td class="col3">Número de documento invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_UNSUPPORTED_DOC</td>
+			<td class="col2">0x0B0E</td>
+			<td class="col3">Documento no soportado por el mecanismo de impresion</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_ASSOCDOC</td>
+			<td class="col2">0x0B11</td>
+			<td class="col3">Tipo de documento asociado invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_ASSOCPV</td>
+			<td class="col2">0x0B12</td>
+			<td class="col3">Punto de venta de documento asociado invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_ASSOCNUM</td>
+			<td class="col2">0x0B13</td>
+			<td class="col3">Numero de documento asociado invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_TRIBUT_ZERO</td>
+			<td class="col2">0x0B15</td>
+			<td class="col3">Número(#) de otros tributos con valor cero no permitido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_TRIBUT_NUM</td>
+			<td class="col2">0x0B16</td>
+			<td class="col3">Número (#) de otros tributos invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_MISSING_TRIBUT</td>
+			<td class="col2">0x0B17</td>
+			<td class="col3">No existen otros tributos</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_TRANSPORTISTA</td>
+			<td class="col2">0x0B18</td>
+			<td class="col3">Datos invalidos del transportista, al emitir Remito X/R</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_TDOC_TERCERO</td>
+			<td class="col2">0x0B19</td>
+			<td class="col3">Tipo de documento del tercero invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_CUIT_TERCERO</td>
+			<td class="col2">0x0B1A</td>
+			<td class="col3">CUIT /CUIL del tercero invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_CHOFER</td>
+			<td class="col2">0x0B1B</td>
+			<td class="col3">Datos invalidos del chofer</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_TF_INVALID_RESPON_TERCERO</td>
+			<td class="col2">0x0B1D</td>
+			<td class="col3">Responsabilidad frente al IVA del tercero invalida</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos sobre documento fiscal no homologados</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Otros retornos de error</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Retornos de error sobre la configuración de ethernet</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x0F)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x10)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DFNH_INTERNO</td>
+			<td class="col2">0x1003</td>
+			<td class="col3">Error interno al sumar monto de importe en un DNF</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DFNH_INVALID_PAYMENTS</td>
+			<td class="col2">0x1004</td>
+			<td class="col3">Pagos no soportado en DNFH Presupuesto X, Remito R/X</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DFNH_INVALID_ITEM</td>
+			<td class="col2">0x1005</td>
+			<td class="col3">Tipo de item no soportado en DNFH Remito R/X, Recibo X o Donaciones</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DFNH_INVALID_DESC</td>
+			<td class="col2">0x1006</td>
+			<td class="col3">Descuentos / Recargos no permitido en DNFH Remito R/X, Recibo X o Donaciones</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DFNH_INVALID_DONAC</td>
+			<td class="col2">0x1007</td>
+			<td class="col3">Solamente se soporta un unico ítem en Donaciones</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DFNH_CANT_MUSTBE_ONE</td>
+			<td class="col2">0x1008</td>
+			<td class="col3">La cantidad del item debe ser uno en Donaciones y Recibo X</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DFNH_UNSUPPORTED</td>
+			<td class="col2">0x1014</td>
+			<td class="col3">Operación no soportada en documentos no fiscales</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_DNFH_NO_CERO</td>
+			<td class="col2">0x1016</td>
+			<td class="col3">El documento no fiscal no puede ser cerrado en cero</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x11)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OTRO_RESERVED</td>
+			<td class="col2">0x1105</td>
+			<td class="col3">Codigo de unidad de medida reservado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OTRO_INVALID_CONDIVA</td>
+			<td class="col2">0x1106</td>
+			<td class="col3">Codigo de condicion frente al IVA invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OTRO_GRAVADO_CONDIVA</td>
+			<td class="col2">0x1107</td>
+			<td class="col3">Solo se permite una Condicion frente al IVA del tipo Gravado (observar que la tasa de IVA es distinto de Cero)</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OTRO_INVALID_TRIBUTCODE</td>
+			<td class="col2">0x1108</td>
+			<td class="col3">Codigo de otros tributos invalido</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_OTRO_INVALID_TRIBUT</td>
+			<td class="col2">0x1109</td>
+			<td class="col3">Codigo de otros tributos no permitido</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x12)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_ETH_CABLE_DISCON</td>
+			<td class="col2">0x1201</td>
+			<td class="col3">Cable de red desconectado</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_ETH_INVALID_IP</td>
+			<td class="col2">0x1202</td>
+			<td class="col3">Direccion IP invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_ETH_INVALID_MASK</td>
+			<td class="col2">0x1203</td>
+			<td class="col3">Mascara de red invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_ETH_INVALID_GATEWAY</td>
+			<td class="col2">0x1204</td>
+			<td class="col3">Direccion de puerta de enlace predeterminada invalida</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_ETH_DHCP_ERROR</td>
+			<td class="col2">0x1205</td>
+			<td class="col3">Error en DHCP</td>
+		</tr>
+				<tr class="row">
+			<td class="col1">ERR_ETH_INVALID_CONFIG</td>
+			<td class="col2">0x1206</td>
+			<td class="col3">Error al aplicar la configuracion</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x13)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x14)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x15)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+					<tr class="section">
+			<td class="section" colspan="3">Sección sin uso (0x16)</td>
+		</tr>
+		<tr class="header">
+			<td class="col1">Código</td>
+			<td class="col2">Número</td>
+			<td class="col3">Descripción</td>
+		</tr>
+				</table>
+</p>

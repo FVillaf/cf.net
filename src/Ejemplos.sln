@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiscalProto", "FiscalProto\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDownload", "MDownload\MDownload.csproj", "{BE43227D-AC73-4902-BFA1-1E6646AB484B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenPEM", "OpenPEM\OpenPEM.csproj", "{33DBED07-F3E0-4D79-BEC9-671A3C3F8DF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BE43227D-AC73-4902-BFA1-1E6646AB484B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE43227D-AC73-4902-BFA1-1E6646AB484B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE43227D-AC73-4902-BFA1-1E6646AB484B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DBED07-F3E0-4D79-BEC9-671A3C3F8DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DBED07-F3E0-4D79-BEC9-671A3C3F8DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DBED07-F3E0-4D79-BEC9-671A3C3F8DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DBED07-F3E0-4D79-BEC9-671A3C3F8DF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
